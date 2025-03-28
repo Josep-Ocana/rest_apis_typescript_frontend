@@ -5,7 +5,11 @@ import { Product } from "../types"
 
 
 export async function loader(){  
-  const products = await getProducts()   
+  const products = await getProducts()
+  if(!Array.isArray(products)){
+    console.log("Los productos no son un arreglo", products)
+    return []
+  }
   return products
 }
 
@@ -23,8 +27,8 @@ export default function Products() {
 
   return (
     <>
-      <div className="flex justify-between">
-        <h2 className="text-4xl font-black">Productos</h2>
+      <div className="flex justify-between items-center p-3">
+        <h2 className="xs:text-2xl sm:text-4xl font-black">Productos</h2>
         <Link
           to="productos/nuevo"
           className='rounded-md bg-indigo-600 p-3 text-sm font-bold text-white shadow-sm hover:bg-indigo-500'

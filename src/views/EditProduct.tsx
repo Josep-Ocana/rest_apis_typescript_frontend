@@ -45,8 +45,8 @@ export default function EditProduct() {
 
   return (
     <>
-      <div className="flex justify-between">
-        <h2 className="text-4xl font-black">Editar Producto</h2>
+      <div className="flex justify-between items-center p-3">
+        <h2 className="xs:text-2xl sm:text-4xl font-black">Editar Producto</h2>
         <Link
           to="/"
           className='rounded-md bg-indigo-600 p-3 text-sm font-bold text-white shadow-sm hover:bg-indigo-500'
@@ -58,7 +58,7 @@ export default function EditProduct() {
       {error && <ErrorMessage>{error}</ErrorMessage>}
       
       <Form
-        className="mt-10"
+        className="mt-10 p-3"
         method="POST"
       >
     
